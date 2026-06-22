@@ -8,6 +8,11 @@ namespace Cadastro_Alunos
         private int mes;
         private int ano;
 
+        public Data(){}
+        public Data(int dia, int mes, int ano)
+        {
+            setData(dia, mes, ano);
+        }
         public bool setDia(int dia)
         {
             bool diaValido = true;
