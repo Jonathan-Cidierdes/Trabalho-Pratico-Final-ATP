@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Cadastro_Alunos;
 
 class Program
 {
@@ -71,23 +72,47 @@ class Program
     public static void salvarArquivo()
     {
         StreamWriter escritor = new StreamWriter(nomeArquivo);
+        escritor.WriteLine(tamanhoLista);
         for (int i = 0; i < tamanhoLista; i++)
         {
-            escritor.WriteLine(listaDeAlunos[i]);
+            escritor.WriteLine(listaDeAlunos[i].getNome());
+            escritor.WriteLine(listaDeAlunos[i].getCpf());
+            escritor.WriteLine(listaDeAlunos[i].getNascimento().getDia());
+            escritor.WriteLine(listaDeAlunos[i].getNascimento().getMes());
+            escritor.WriteLine(listaDeAlunos[i].getNascimento().getAno());
+            escritor.WriteLine(listaDeAlunos[i].getCadastro().getDia());
+            escritor.WriteLine(listaDeAlunos[i].getCadastro().getMes());
+            escritor.WriteLine(listaDeAlunos[i].getCadastro().getAno());
+            escritor.WriteLine(listaDeAlunos[i].getNota());
+
         }
         escritor.Close();
 
-        Console.WriteLine("\n--- Arquvo salvo com sucesso! ---");
+        Console.WriteLine($"\n--- Arquivo salvo com sucesso! ---\nQuantidade de alunos salvos: {tamanhoLista}");
     }
     public static void carregarArquivo()
     {
+
         StreamReader leitor = new StreamReader(nomeArquivo);
+        int dia, mes, ano;
+        tamanhoLista = int.Parse(leitor.ReadLine());
         for (int i = 0; i < tamanhoLista; i++)
         {
-            listaDeAlunos[i] = leitor.ReadLine();
+            listaDeAlunos[i] = new Aluno();
+            listaDeAlunos[i].setNome(leitor.ReadLine());
+            listaDeAlunos[i].setCpf(leitor.ReadLine());
+            dia = int.Parse(leitor.ReadLine());
+            mes = int.Parse(leitor.ReadLine());
+            ano = int.Parse(leitor.ReadLine());
+            listaDeAlunos[i].setNascimento(dia, mes, ano);
+            dia = int.Parse(leitor.ReadLine());
+            mes = int.Parse(leitor.ReadLine());
+            ano = int.Parse(leitor.ReadLine());
+            listaDeAlunos[i].setCadastro(dia, mes, ano);
+            listaDeAlunos[i].setNota(double.Parse(leitor.ReadLine()));
         }
         leitor.Close();
-        Console.WriteLine("\n--- Arquvo carregado com sucesso! ---");
+        Console.WriteLine($"\n--- Arquivo carregado com sucesso! ---\nQuantidade de alunos carregados: {tamanhoLista}");
     }
     public static void novoAluno()
     {
@@ -101,7 +126,7 @@ class Program
     {
         if (tamanhoLista > 0)
         {
-            Console.WriteLine("\n» Lista de Alunos registrados:");
+            Console.WriteLine("\n» Lista de Alunos registrados:\n");
             for (int i = 0; i < tamanhoLista; i++)
             {
                 listaDeAlunos[i].escrevaAluno();
@@ -113,191 +138,107 @@ class Program
     }
     public static void pesquisarPeloNome()
     {
-
+        if (tamanhoLista == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
+        else
+        {
+            Console.Write("Nome a ser pesquisado: ");
+            string chave = Console.ReadLine().ToUpper();
+            bool achou = false;
+            Console.WriteLine($"\nLista de alunos contendo o nome {chave}:");
+            for (int i = 0; i < tamanhoLista; i++)
+            {
+                if (listaDeAlunos[i].getNome().ToUpper().Contains(chave))
+                {
+                    listaDeAlunos[i].escrevaAluno();
+                    achou = true;
+                }
+            }
+            if (!achou) Console.WriteLine("\n--- Nenhum aluno com esse nome foi encontrado! ---");
+        }
     }
     public static void listarAniversariantes()
     {
-
+        if (tamanhoLista == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
+        else
+        {
+            int chave = 0;
+            do
+            {
+                Console.Write("Mês de nascimento a ser pesquisado: ");
+                chave = int.Parse(Console.ReadLine());
+                if (chave < 1 || chave > 12) Console.WriteLine("\n--- Mês inválido! ---");
+            } while (chave < 1 || chave > 12);
+            bool achou = false;
+            Console.WriteLine($"\nLista de alunos nascidos em {listaDeAlunos[0].getNascimento().mesExtenso(chave)}:");
+            for (int i = 0; i < tamanhoLista; i++)
+            {
+                if (listaDeAlunos[i].getNascimento().getMes() == chave)
+                {
+                    listaDeAlunos[i].escrevaAluno();
+                    achou = true;
+                }
+            }
+            if (!achou) Console.WriteLine($"\n--- Nenhum aluno nascido em {listaDeAlunos[0].getNascimento().mesExtenso(chave)} foi encontrado! ---");
+        }
     }
+
     public static void excluirPorCpf()
     {
-
+        if (tamanhoLista == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
+        else
+        {
+            Console.Write("CPF do aluno a ser excluído: ");
+            string chave = Console.ReadLine();
+            bool achou = false;
+            int i = 0;
+            while ((!achou) && (i < tamanhoLista))
+            {
+                if (listaDeAlunos[i].getCpf() == chave) achou = true;
+                else i++;
+            }
+            if (achou)
+            {
+                Console.WriteLine("Aluno encontrado:");
+                listaDeAlunos[i].escrevaAluno();
+                Console.WriteLine("Tem certeza de que deseja excluir o aluno acima? [S/N]");
+                string confirm = Console.ReadLine().ToUpper();
+                while (confirm != "S" && confirm != "N")
+                {
+                    Console.WriteLine("\n--- Comando inválido! ---\nTem certeza de que deseja excluir o aluno acima? [S/N]");
+                    confirm = Console.ReadLine().ToUpper();
+                }
+                if (confirm == "S")
+                {
+                    for (int j = i; j < tamanhoLista - 1; j++)
+                    {
+                        listaDeAlunos[j] = listaDeAlunos[j + 1];
+                    }
+                    tamanhoLista--;
+                    Console.WriteLine("\n--- Aluno excluído com sucesso! ---");
+                }
+                else Console.WriteLine("\n--- Operação cancelada! ---");
+            }
+            else Console.WriteLine($"\n--- Nenhum aluno com o CPF {chave} foi encontrado! ---");
+        }
     }
     public static void excluirTodosAlunos()
     {
-
-    }
-}
-
-class Aluno
-{
-    private string nome;
-    private string cpf;
-    private Data nascimento = new Data();
-    private Data cadastro = new Data();
-    //private double nota = 0;
-    public static int qtAlunos = 0;
-
-    public Aluno() { qtAlunos++; }
-    public Aluno(string nome, int dia, int mes, int ano)
-    {
-        setNome(nome);
-        nascimento.setData(dia, mes, ano);
-        setCadastro(dia, mes, ano);
-        qtAlunos++;
-    }
-    public void setNome(string nome)
-    {
-        this.nome = nome;
-    }
-    public string getNome()
-    {
-        return nome;
-    }
-
-    public bool setNascimento(int dia, int mes, int ano)
-    {
-        nascimento.setData(dia, mes, ano);
-        return nascimento.dataValida();
-    }
-    public Data getNascimento()
-    {
-        return nascimento;
-    }
-
-    public void setCadastro(int dia,int mes,int ano)
-    {
-        cadastro.setData(dia, mes, ano);
-    }
-    public Data getCadastro()
-    {
-        return cadastro;
-    }
-
-    public void setCpf(string cpf)
-    {
-        this.cpf = cpf;
-    }
-    public string getCpf()
-    {
-        return cpf;
-    }
-
-    public void leiaNome()
-    {
-        Console.Write("\nDigite o nome do aluno: ");
-        setNome(Console.ReadLine());
-    }
-    public void escrevaNome()
-    {
-        Console.Write(getNome());
-    }
-
-    public void leiaAluno()
-    {
-        leiaNome();
-        Console.WriteLine("Digite o CPF: ");
-        setCpf(Console.ReadLine());
-        Console.WriteLine("\nPara inserir a data de nascimento...");
-        nascimento.leiaData();
-        Console.WriteLine("\nPara inserir a data de cadastro...");
-        cadastro.leiaData();
-        Console.WriteLine("\n=== Aluno cadastrado com sucesso! ===");
-    }
-    public void escrevaAluno()
-    {
-        Console.Write("Nome: ");
-        escrevaNome();
-        Console.Write("\nNascimento: ");
-        nascimento.escrevaData();
-        Console.Write("\nCadastro: ");
-        cadastro.escrevaData();
-        Console.Write("\nCPF: ");
-        Console.WriteLine(getCpf());
-        Console.WriteLine();
-    }
-}
-
-class Data
-{
-    private int dia;
-    private int mes;
-    private int ano;
-
-    public bool setDia(int dia)
-    {
-        bool diaValido = true;
-
-        if (dia >= 0 && dia <= 31) this.dia = dia;
-        else diaValido = false;
-
-        return diaValido;
-    }
-    public bool setMes(int mes)
-    {
-        bool mesValido = true;
-
-        if (mes >= 0 && mes <= 12) this.mes = mes;
-        else mesValido = false;
-
-        return mesValido;
-    }
-    public void setAno(int ano)
-    {
-        this.ano = ano;
-    }
-
-    public bool setData(int dia, int mes, int ano)
-    {
-        setDia(dia);
-        setMes(mes);
-        setAno(ano);
-        return dataValida();
-    }
-
-    public int getDia()
-    {
-        return dia;
-    }
-    public int getMes()
-    {
-        return mes;
-    }
-    public int getAno()
-    {
-        return ano;
-    }
-
-    public bool dataValida()
-    {
-        bool valida = false;
-        if ((getDia() >= 0 && getDia() <= 31) && (getMes() >= 0 && getMes() <= 12)) valida = true;
-        return valida;
-    }
-    public string mesExtenso()
-    {
-        string[] nomeMes = { "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" };
-        return nomeMes[getMes() - 1];
-    }
-    public int diasMes()
-    {
-        int[] qtDias = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-        if ((getMes() == 2) && (getAno() % 4 == 0) && ((getAno() % 100 != 0) || (getAno() % 400 == 0)))
-            qtDias[1] = 29;
-        return qtDias[getMes() - 1];
-    }
-
-    public void escrevaData()
-    {
-        Console.Write(getDia() + "/" + getMes() + "/" + getAno());
-    }
-    public void leiaData()
-    {
-        Console.Write("Digite o dia: ");
-        setDia(int.Parse(Console.ReadLine()));
-        Console.Write("Digite o mês:" );
-        setMes(int.Parse(Console.ReadLine()));
-        Console.Write("Digite o ano:" );
-        setAno(int.Parse(Console.ReadLine()));
+        if (tamanhoLista == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
+        else
+        {
+            Console.WriteLine("Tem certeza de que deseja excluir TODOS os alunos? [S/N]");
+            string confirm = Console.ReadLine().ToUpper();
+            while (confirm != "S" && confirm != "N")
+            {
+                Console.WriteLine("\n--- Comando inválido! ---\nDeseja excluir TODOS os alunos? [S/N]");
+                confirm = Console.ReadLine().ToUpper();
+            }
+            if (confirm == "S")
+            {
+                tamanhoLista = 0;
+                Console.WriteLine("\n--- Todos os alunos foram excluídos com sucesso! ---");
+            }
+            else Console.WriteLine("\n--- Operação cancelada! ---");
+        }
     }
 }

@@ -12,3 +12,18 @@ C:\Users\1167794\Documents\workspace\ATP\Trabalho Prático Final\Trabalho Práti
 C:\Users\1167794\Documents\workspace\ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.pdb
 C:\Users\1167794\Documents\workspace\ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.genruntimeconfig.cache
 C:\Users\1167794\Documents\workspace\ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\ref\Trabalho Prático Final.dll
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\bin\Debug\net8.0\Trabalho Prático Final.exe
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\bin\Debug\net8.0\Trabalho Prático Final.deps.json
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\bin\Debug\net8.0\Trabalho Prático Final.runtimeconfig.json
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\bin\Debug\net8.0\Trabalho Prático Final.dll
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\bin\Debug\net8.0\Trabalho Prático Final.pdb
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.AssemblyInfoInputs.cache
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.AssemblyInfo.cs
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.csproj.CoreCompileInputs.cache
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.sourcelink.json
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.dll
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\refint\Trabalho Prático Final.dll
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.pdb
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\Trabalho Prático Final.genruntimeconfig.cache
+C:\Users\linkt\OneDrive\Documents\- Workspace\ATP\Trabalho-Pratico-Final-ATP\Trabalho Prático Final\Trabalho Prático Final\obj\Debug\net8.0\ref\Trabalho Prático Final.dll
