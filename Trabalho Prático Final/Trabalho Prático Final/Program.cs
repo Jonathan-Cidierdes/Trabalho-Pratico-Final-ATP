@@ -5,7 +5,6 @@ using Cadastro_Alunos;
 class Program
 {
     public static Aluno[] listaDeAlunos = new Aluno[100];
-    public static int tamanhoLista = 0;
     public static string nomeArquivo = "Arquivo de Alunos";
 
     static void Main()
@@ -72,8 +71,8 @@ class Program
     public static void salvarArquivo()
     {
         StreamWriter escritor = new StreamWriter(nomeArquivo);
-        escritor.WriteLine(tamanhoLista);
-        for (int i = 0; i < tamanhoLista; i++)
+        escritor.WriteLine(Aluno.qtAlunos);
+        for (int i = 0; i < Aluno.qtAlunos; i++)
         {
             escritor.WriteLine(listaDeAlunos[i].getNome());
             escritor.WriteLine(listaDeAlunos[i].getCpf());
@@ -88,15 +87,15 @@ class Program
         }
         escritor.Close();
 
-        Console.WriteLine($"\n--- Arquivo salvo com sucesso! ---\nQuantidade de alunos salvos: {tamanhoLista}");
+        Console.WriteLine($"\n--- Arquivo salvo com sucesso! ---\nQuantidade de alunos salvos: {Aluno.qtAlunos}");
     }
     public static void carregarArquivo()
     {
 
         StreamReader leitor = new StreamReader(nomeArquivo);
         int dia, mes, ano;
-        tamanhoLista = int.Parse(leitor.ReadLine());
-        for (int i = 0; i < tamanhoLista; i++)
+        int qtLeituras = int.Parse(leitor.ReadLine());
+        for (int i = 0; i <qtLeituras; i++)
         {
             listaDeAlunos[i] = new Aluno();
             listaDeAlunos[i].setNome(leitor.ReadLine());
@@ -112,22 +111,21 @@ class Program
             listaDeAlunos[i].setNota(double.Parse(leitor.ReadLine()));
         }
         leitor.Close();
-        Console.WriteLine($"\n--- Arquivo carregado com sucesso! ---\nQuantidade de alunos carregados: {tamanhoLista}");
+        Console.WriteLine($"\n--- Arquivo carregado com sucesso! ---\nQuantidade de alunos carregados: {Aluno.qtAlunos}");
     }
     public static void novoAluno()
     {
-        Console.WriteLine($"\n» Cadastro do {tamanhoLista + 1}° aluno: ");
+        Console.WriteLine($"\n» Cadastro do {Aluno.qtAlunos + 1}° aluno: ");
         Aluno novoAluno = new Aluno();
         novoAluno.leiaAluno();
-        listaDeAlunos[tamanhoLista] = novoAluno;
-        tamanhoLista++;
+        listaDeAlunos[Aluno.qtAlunos - 1] = novoAluno;
     }
     public static void listarAlunos()
     {
-        if (tamanhoLista > 0)
+        if (Aluno.qtAlunos > 0)
         {
             Console.WriteLine("\n» Lista de Alunos registrados:\n");
-            for (int i = 0; i < tamanhoLista; i++)
+            for (int i = 0; i < Aluno.qtAlunos; i++)
             {
                 listaDeAlunos[i].escrevaAluno();
                 Console.WriteLine();
@@ -138,14 +136,14 @@ class Program
     }
     public static void pesquisarPeloNome()
     {
-        if (tamanhoLista == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
+        if (Aluno.qtAlunos == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
         else
         {
             Console.Write("Nome a ser pesquisado: ");
             string chave = Console.ReadLine().ToUpper();
             bool achou = false;
             Console.WriteLine($"\nLista de alunos contendo o nome {chave}:");
-            for (int i = 0; i < tamanhoLista; i++)
+            for (int i = 0; i < Aluno.qtAlunos; i++)
             {
                 if (listaDeAlunos[i].getNome().ToUpper().Contains(chave))
                 {
@@ -158,7 +156,7 @@ class Program
     }
     public static void listarAniversariantes()
     {
-        if (tamanhoLista == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
+        if (Aluno.qtAlunos == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
         else
         {
             int chave = 0;
@@ -170,7 +168,7 @@ class Program
             } while (chave < 1 || chave > 12);
             bool achou = false;
             Console.WriteLine($"\nLista de alunos nascidos em {listaDeAlunos[0].getNascimento().mesExtenso(chave)}:");
-            for (int i = 0; i < tamanhoLista; i++)
+            for (int i = 0; i < Aluno.qtAlunos; i++)
             {
                 if (listaDeAlunos[i].getNascimento().getMes() == chave)
                 {
@@ -184,14 +182,14 @@ class Program
 
     public static void excluirPorCpf()
     {
-        if (tamanhoLista == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
+        if (Aluno.qtAlunos == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
         else
         {
             Console.Write("CPF do aluno a ser excluído: ");
             string chave = Console.ReadLine();
             bool achou = false;
             int i = 0;
-            while ((!achou) && (i < tamanhoLista))
+            while ((!achou) && (i < Aluno.qtAlunos))
             {
                 if (listaDeAlunos[i].getCpf() == chave) achou = true;
                 else i++;
@@ -209,11 +207,11 @@ class Program
                 }
                 if (confirm == "S")
                 {
-                    for (int j = i; j < tamanhoLista - 1; j++)
+                    for (int j = i; j < Aluno.qtAlunos - 1; j++)
                     {
                         listaDeAlunos[j] = listaDeAlunos[j + 1];
                     }
-                    tamanhoLista--;
+                    Aluno.qtAlunos--;
                     Console.WriteLine("\n--- Aluno excluído com sucesso! ---");
                 }
                 else Console.WriteLine("\n--- Operação cancelada! ---");
@@ -223,7 +221,7 @@ class Program
     }
     public static void excluirTodosAlunos()
     {
-        if (tamanhoLista == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
+        if (Aluno.qtAlunos == 0) Console.WriteLine("\n--- Não há nenhum aluno cadastrado! ---");
         else
         {
             Console.WriteLine("Tem certeza de que deseja excluir TODOS os alunos? [S/N]");
@@ -235,7 +233,7 @@ class Program
             }
             if (confirm == "S")
             {
-                tamanhoLista = 0;
+                Aluno.qtAlunos = 0;
                 Console.WriteLine("\n--- Todos os alunos foram excluídos com sucesso! ---");
             }
             else Console.WriteLine("\n--- Operação cancelada! ---");

@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho Pr\u00E1tico Final\\",
+  "WorkspaceRootPath": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho-Pratico-Final-ATP\\Trabalho Pr\u00E1tico Final\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB53FDF9-142F-485E-AAFA-E056F10D3D8D}|Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final.csproj|c:\\users\\1167794\\documents\\workspace\\atp\\trabalho pr\u00E1tico final\\trabalho pr\u00E1tico final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB53FDF9-142F-485E-AAFA-E056F10D3D8D}|Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final.csproj|c:\\users\\1167794\\documents\\workspace\\atp\\trabalho-pratico-final-atp\\trabalho pr\u00E1tico final\\trabalho pr\u00E1tico final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB53FDF9-142F-485E-AAFA-E056F10D3D8D}|Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final.csproj|solutionrelative:trabalho pr\u00E1tico final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB53FDF9-142F-485E-AAFA-E056F10D3D8D}|Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final.csproj|c:\\users\\1167794\\documents\\workspace\\atp\\trabalho-pratico-final-atp\\trabalho pr\u00E1tico final\\trabalho pr\u00E1tico final\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB53FDF9-142F-485E-AAFA-E056F10D3D8D}|Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final.csproj|solutionrelative:trabalho pr\u00E1tico final\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB53FDF9-142F-485E-AAFA-E056F10D3D8D}|Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final.csproj|c:\\users\\1167794\\documents\\workspace\\atp\\trabalho-pratico-final-atp\\trabalho pr\u00E1tico final\\trabalho pr\u00E1tico final\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB53FDF9-142F-485E-AAFA-E056F10D3D8D}|Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final.csproj|solutionrelative:trabalho pr\u00E1tico final\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,14 +28,39 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho-Pratico-Final-ATP\\Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final\\Program.cs",
               "RelativeDocumentMoniker": "Trabalho Pr\u00E1tico Final\\Program.cs",
-              "ToolTip": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final\\Program.cs",
-              "RelativeToolTip": "Trabalho Pr\u00E1tico Final\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4BAAABAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho-Pratico-Final-ATP\\Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final\\Program.cs*",
+              "RelativeToolTip": "Trabalho Pr\u00E1tico Final\\Program.cs*",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAEwHgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-17T20:44:41.944Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Aluno.cs",
+              "DocumentMoniker": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho-Pratico-Final-ATP\\Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final\\Aluno.cs",
+              "RelativeDocumentMoniker": "Trabalho Pr\u00E1tico Final\\Aluno.cs",
+              "ToolTip": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho-Pratico-Final-ATP\\Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final\\Aluno.cs",
+              "RelativeToolTip": "Trabalho Pr\u00E1tico Final\\Aluno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T16:27:39.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Data.cs",
+              "DocumentMoniker": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho-Pratico-Final-ATP\\Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final\\Data.cs",
+              "RelativeDocumentMoniker": "Trabalho Pr\u00E1tico Final\\Data.cs",
+              "ToolTip": "C:\\Users\\1167794\\Documents\\workspace\\ATP\\Trabalho-Pratico-Final-ATP\\Trabalho Pr\u00E1tico Final\\Trabalho Pr\u00E1tico Final\\Data.cs",
+              "RelativeToolTip": "Trabalho Pr\u00E1tico Final\\Data.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAA2wGgAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T16:27:40.311Z"
             }
           ]
         }

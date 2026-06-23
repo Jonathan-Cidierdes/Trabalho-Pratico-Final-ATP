@@ -102,7 +102,7 @@ namespace Cadastro_Alunos
 
         public void escrevaData()
         {
-            Console.Write(getDia() + "/" + getMes() + "/" + getAno());
+            Console.Write($"{getDia():D2}/{getMes():D2}/{getAno()}");
         }
         public void leiaData()
         {
